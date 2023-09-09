@@ -8,6 +8,8 @@ import (
 	"os/signal"
 	"strings"
 	"syscall"
+
+	"github.com/williamjhughes/flux/pkg/lang"
 )
 
 func UseFile(name string) {
@@ -56,5 +58,10 @@ func UseRepl() {
 }
 
 func execute(source string) {
-	fmt.Println(source)
+	lexer := lang.NewLexer(source)
+	token := lexer.ScanTokens()
+
+	for _, t := range token {
+		fmt.Println(t)
+	}
 }

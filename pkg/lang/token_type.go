@@ -36,6 +36,7 @@ const (
 	TokenTypeFor
 	TokenTypeWhile
 	TokenTypeDef
+	TokenTypeReturn
 	TokenTypeClass
 	TokenTypeOf
 	TokenTypeSelf
@@ -80,6 +81,7 @@ var tokenTypeStringMap = map[TokenType]string{
 	TokenTypeFor:          "TOKEN_TYPE_FOR",
 	TokenTypeWhile:        "TOKEN_TYPE_WHILE",
 	TokenTypeDef:          "TOKEN_TYPE_DEF",
+	TokenTypeReturn:       "TOKEN_TYPE_RETURN",
 	TokenTypeClass:        "TOKEN_TYPE_CLASS",
 	TokenTypeOf:           "TOKEN_TYPE_OF",
 	TokenTypeSelf:         "TOKEN_TYPE_SELF",
@@ -92,18 +94,23 @@ var tokenTypeStringMap = map[TokenType]string{
 }
 
 var tokenTypeKeywordsMap = map[string]TokenType{
-	"and":   TokenTypeAnd,
-	"or":    TokenTypeOr,
-	"let":   TokenTypeLet,
-	"if":    TokenTypeIf,
-	"else":  TokenTypeElse,
-	"for":   TokenTypeFor,
-	"while": TokenTypeWhile,
-	"def":   TokenTypeDef,
-	"class": TokenTypeClass,
-	"of":    TokenTypeOf,
-	"self":  TokenTypeSelf,
-	"super": TokenTypeSuper,
+	"and":    TokenTypeAnd,
+	"or":     TokenTypeOr,
+	"let":    TokenTypeLet,
+	"if":     TokenTypeIf,
+	"else":   TokenTypeElse,
+	"for":    TokenTypeFor,
+	"while":  TokenTypeWhile,
+	"def":    TokenTypeDef,
+	"return": TokenTypeReturn,
+	"class":  TokenTypeClass,
+	"of":     TokenTypeOf,
+	"self":   TokenTypeSelf,
+	"super":  TokenTypeSuper,
+	"none":   TokenTypeNone,
+	"true":   TokenTypeTrue,
+	"false":  TokenTypeFalse,
+	"print":  TokenTypePrint,
 }
 
 func (t TokenType) String() string {
